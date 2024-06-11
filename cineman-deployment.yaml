@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cineman
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cineman
+  template:
+    metadata:
+      labels:
+        app: cineman
+    spec:
+      containers:
+      - name: cineman
+        image: cineman-spring-boot-image
+        ports:
+        - containerPort: 8080
